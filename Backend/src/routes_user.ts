@@ -112,7 +112,7 @@ server.delete('/user/id/:id', async (request) => {
 
 }
 
-export async function AppPrduct(server: FastifyInstance) {
+export async function AppProduct(server: FastifyInstance) {
     server.get('/product', async () => {
         const products = await prisma.product.findMany()
         return products
@@ -138,10 +138,10 @@ server.post('/product', async (request) => {
         ingredient : z.string(),
         quantity: z.number(),
         energetic: z.number(),
-        protein: z.number(),
-        carb: z.number(),
-        fat: z.number(),
-        sodium: z.number(),
+        protein: z.string(),
+        carb: z.string(),
+        fat: z.string(),
+        sodium: z.string(),
         cod_barras: z.number()
 
     });
@@ -178,10 +178,10 @@ server.put('/product/id/:id', async (request) => {
         ingredient : z.string(),
         quantity: z.number(),
         energetic: z.number(),
-        protein: z.number(),
-        carb: z.number(),
-        fat: z.number(),
-        sodium: z.number(),
+        protein: z.string(),
+        carb: z.string(),
+        fat: z.string(),
+        sodium: z.string(),
         cod_barras: z.number()
         
     })

@@ -3,9 +3,10 @@ import Fastify from 'fastify'
 const server = Fastify()
 
 import cors from '@fastify/cors'
-import {AppRoutes} from './routes_user'
+import {AppUser, AppProduct} from './routes_user'
 
-server.register(AppRoutes)
+server.register(AppUser)
+server.register(AppProduct)
 server.register(cors)
 
 server.listen({
