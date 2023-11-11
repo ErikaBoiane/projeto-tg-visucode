@@ -20,7 +20,7 @@ model User {
   @@map("users")
 }
 
-model Produto {
+model Product {
   id         String   @id @default(uuid())
   name       String
   ingredient String
@@ -30,7 +30,8 @@ model Produto {
   carb       Decimal
   fat        Decimal
   sodium     Decimal
+  cod_barras Int
   created_at DateTime
-  @@map("produtos")
+  @@map("products")
 }
 
